@@ -1,0 +1,52 @@
+body,
+a {
+  color: #333333;
+}
+.sidebar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 0px;
+  width: 250px;
+  height: 100%;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+.sidebar a {
+  color: #ecf0f1;
+}
+.sidebar .sidebar__header {
+  padding: 20px;
+  font-size: 1.75rem;
+}
+.sidebar nav a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+}
+.sidebar nav a:hover {
+  background-color: #233140;
+}
+.sidebar nav a.selected {
+  background-color: #e74c3c;
+}
+.sidebar .sidebar__footer {
+  position: absolute;
+  bottom: 0px;
+  width: 250px;
+  text-align: center;
+}
+.sidebar .sidebar__footer__contact {
+  padding: 20px;
+}
+.sidebar .sidebar__footer__contact a {
+  color: #5e7980;
+}
+.content {
+  padding: 20px;
+  padding-left: 270px;
+}
+.html2ts .html2ts__textarea {
+  width: 100%;
+  font-family: "Lucida Console";
+}

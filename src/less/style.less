@@ -1,0 +1,68 @@
+@text-color: #333;
+
+@sidebar-width: 250px;
+@sidebar-padding: 20px;
+@sidebar-font-color: #ECF0F1;
+@sidebar-bg-color: #2C3E50;
+@sidebar-selected-bg-color: #E74C3C;
+
+@content-padding: 20px;
+
+body, a {
+  color: @text-color;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding: 0px;
+  width: @sidebar-width;
+  height: 100%;
+  background-color: @sidebar-bg-color;
+  color: @sidebar-font-color;
+  a { color: @sidebar-font-color; }
+
+  .sidebar__header {
+    padding: @sidebar-padding;
+    font-size: 1.75rem;
+  }
+
+  nav a {
+    display: block;
+    padding: @sidebar-padding;
+    text-decoration: none;
+
+    &:hover {
+      background-color: darken(@sidebar-bg-color, 5%);
+    }
+
+    &.selected {
+      background-color: @sidebar-selected-bg-color;
+    }
+  }
+
+  .sidebar__footer {
+    position: absolute;
+    bottom: 0px;
+    width: @sidebar-width;
+    text-align: center;
+  }
+
+  .sidebar__footer__contact {
+    padding: @sidebar-padding;
+    a { color: darken(@sidebar-font-color, 50%); }
+  }
+}
+
+.content {
+  padding: @content-padding;
+  padding-left: @sidebar-width + @content-padding;
+}
+
+.html2ts {
+  .html2ts__textarea {
+    width: 100%;
+    font-family: "Lucida Console";
+  }
+}
