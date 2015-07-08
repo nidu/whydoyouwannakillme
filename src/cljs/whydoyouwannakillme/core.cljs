@@ -45,7 +45,7 @@
       (sidebar-item module current?))]
    [:div.sidebar__footer
     [:div.sidebar__footer__contact
-     [:a {:href "https://github.com/nidu"} "nidu@github"]]]])
+     [:a {:href "https://github.com/nidu/whydoyouwannakillme"} "nidu@github"]]]])
 
 ;; Container
 
