@@ -8,7 +8,8 @@
 (defonce state
   (atom {:opts {:full-names false
                 :indent 2
-                :html ""}}))
+                :html ""
+                :double-quotes false}}))
 
 (defn map-chan [from to f]
   (go-loop []
@@ -30,11 +31,12 @@
          "} = React.DOM;\n")))
 
 (defn gen-ts [opts]
-  (let [{:keys [html full-names indent]} opts
+  (let [{:keys [html full-names indent double-quotes]} opts
         prefix (if full-names "React.DOM." "")
         {:keys [tags result]} (html->ts {:html (:html opts)
                                          :prefix prefix
-                                         :indent indent})]
+                                         :indent indent
+                                         :quote-str (if double-quotes "\"" "'")})]
     (str
       (when-not full-names
         (str
@@ -50,7 +52,8 @@
                     :value value}))]
     [:form.pure-form.pure-form-stacked.html2ts__opts
      [:fieldset
-      [:legend "Convet HTML to TypeScript React code"]
+      [:legend "Convert HTML to TypeScript React code"]
+      [:div.unfinished-warning "Please note that it hardly works at the moment"]
       [:div.pure-g
        [:div.pure-u-1-1
         [:label {:for "indent"} "Indent"]
@@ -71,6 +74,14 @@
                   :on-change #(set-opt :full-names
                                        (-> opts :full-names not))}
           " Full name"]]]
+       [:div.pure-u-1-2
+        [:label.pure-checkbox {:for "double-quotes"}
+         [:input {:type "checkbox"
+                  :name name
+                  :checked (:double-quotes opts)
+                  :on-change #(set-opt :double-quotes
+                                       (-> opts :double-quotes not))}
+          " Double quotes"]]]
        [:div.pure-u-1-1
         [:label {:for "html"} "HTML"]
         [:textarea.html2ts__textarea

@@ -50,3 +50,8 @@ a {
   width: 100%;
   font-family: "Lucida Console";
 }
+.unfinished-warning {
+  font-size: 2rem;
+  font-style: bold;
+  color: #E74C3C;
+}
